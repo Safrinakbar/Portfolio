@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Trophy, Medal, Award, Building, GraduationCap, Shield, BarChart3 } from "lucide-react";
+import { Trophy, Medal, Award, Building, GraduationCap, Shield, BarChart3, Github } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const experiences = [
@@ -8,14 +9,16 @@ const experiences = [
     company: "Climateverse",
     period: "Completed",
     description: "Developed interactive Python learning platform using React and Firebase with comprehensive course modules and user progress tracking.",
-    icon: Building
+    icon: Building,
+    githubUrl: "https://github.com/Safrinakbar/Python_learn_platform.git"
   },
   {
     title: "Consultancy Project",
     company: "SriPriya Textiles",
     period: "2024",
     description: "Built comprehensive e-commerce platform with payment integration, inventory management, and sales analytics for textile business.",
-    icon: Building
+    icon: Building,
+    githubUrl: "https://github.com/Safrinakbar/E-commerce-website.git"
   }
 ];
 
@@ -111,12 +114,29 @@ export default function ExperienceSection() {
                 >
                   <div className="absolute -left-2 top-0 w-4 h-4 bg-primary rounded-full" />
                   <div className="glassmorphism p-6 rounded-xl hover:shadow-lg transition-shadow">
-                    <div className="flex items-center mb-3">
-                      <exp.icon className="w-6 h-6 text-primary mr-3" />
-                      <div>
-                        <h4 className="text-xl font-bold text-slate-800">{exp.title}</h4>
-                        <p className="text-primary font-semibold">{exp.company}</p>
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center">
+                        <exp.icon className="w-6 h-6 text-primary mr-3" />
+                        <div>
+                          <h4 className="text-xl font-bold text-slate-800">{exp.title}</h4>
+                          <p className="text-primary font-semibold">{exp.company}</p>
+                        </div>
                       </div>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        asChild
+                      >
+                        <a 
+                          href={exp.githubUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          data-testid={`experience-github-${index}`}
+                        >
+                          <Github className="w-4 h-4 mr-2" />
+                          GitHub
+                        </a>
+                      </Button>
                     </div>
                     <p className="text-muted-foreground mb-3">{exp.description}</p>
                     <div className="text-sm text-muted-foreground">{exp.period}</div>

@@ -110,186 +110,68 @@ export default function ContactSection() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <img 
-              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-              alt="Peaceful landscape with flying birds" 
-              className="w-full h-64 object-cover rounded-2xl mb-8" 
-            />
+        <motion.div
+          className="max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 50 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <img 
+            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+            alt="Peaceful landscape with flying birds" 
+            className="w-full h-64 object-cover rounded-2xl mb-8" 
+          />
 
-            <div className="space-y-6" data-testid="contact-info">
-              <motion.div
-                className="flex items-center space-x-4"
-                whileHover={{ x: 5 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                  <Mail className="text-primary text-xl w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-slate-800">Email</h4>
-                  <p className="text-muted-foreground">safrinbarganaa.22cse@kongu.edu</p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                className="flex items-center space-x-4"
-                whileHover={{ x: 5 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                  <Phone className="text-primary text-xl w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-slate-800">Phone</h4>
-                  <p className="text-muted-foreground">+91 8825683458</p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                className="flex items-center space-x-4"
-                whileHover={{ x: 5 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                  <Linkedin className="text-primary text-xl w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-slate-800">LinkedIn</h4>
-                  <p className="text-muted-foreground">Safrin Bargana</p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                className="flex items-center space-x-4"
-                whileHover={{ x: 5 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                  <Github className="text-primary text-xl w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-slate-800">GitHub</h4>
-                  <p className="text-muted-foreground">Safrinakbar</p>
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
-
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <form 
-              className="glassmorphism p-8 rounded-2xl space-y-6" 
-              onSubmit={handleSubmit}
-              data-testid="contact-form"
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6" data-testid="contact-info">
+            <motion.div
+              className="glassmorphism p-6 rounded-xl text-center"
+              whileHover={{ scale: 1.05, y: -5 }}
+              transition={{ duration: 0.2 }}
             >
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <Label htmlFor="firstName" className="text-slate-700 font-semibold mb-2">
-                    First Name *
-                  </Label>
-                  <Input
-                    id="firstName"
-                    name="firstName"
-                    type="text"
-                    placeholder="John"
-                    value={formData.firstName}
-                    onChange={handleInputChange}
-                    required
-                    data-testid="input-firstname"
-                    className="mt-2"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="lastName" className="text-slate-700 font-semibold mb-2">
-                    Last Name *
-                  </Label>
-                  <Input
-                    id="lastName"
-                    name="lastName"
-                    type="text"
-                    placeholder="Doe"
-                    value={formData.lastName}
-                    onChange={handleInputChange}
-                    required
-                    data-testid="input-lastname"
-                    className="mt-2"
-                  />
-                </div>
+              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Mail className="text-primary text-xl w-6 h-6" />
               </div>
+              <h4 className="text-lg font-semibold text-slate-800 mb-2">Email</h4>
+              <p className="text-muted-foreground text-sm">safrinbarganaa.22cse@kongu.edu</p>
+            </motion.div>
 
-              <div>
-                <Label htmlFor="email" className="text-slate-700 font-semibold mb-2">
-                  Email *
-                </Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="john@example.com"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  required
-                  data-testid="input-email"
-                  className="mt-2"
-                />
+            <motion.div
+              className="glassmorphism p-6 rounded-xl text-center"
+              whileHover={{ scale: 1.05, y: -5 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Phone className="text-primary text-xl w-6 h-6" />
               </div>
+              <h4 className="text-lg font-semibold text-slate-800 mb-2">Phone</h4>
+              <p className="text-muted-foreground text-sm">+91 8825683458</p>
+            </motion.div>
 
-              <div>
-                <Label htmlFor="subject" className="text-slate-700 font-semibold mb-2">
-                  Subject
-                </Label>
-                <Input
-                  id="subject"
-                  name="subject"
-                  type="text"
-                  placeholder="Project Collaboration"
-                  value={formData.subject}
-                  onChange={handleInputChange}
-                  data-testid="input-subject"
-                  className="mt-2"
-                />
+            <motion.div
+              className="glassmorphism p-6 rounded-xl text-center"
+              whileHover={{ scale: 1.05, y: -5 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Linkedin className="text-primary text-xl w-6 h-6" />
               </div>
+              <h4 className="text-lg font-semibold text-slate-800 mb-2">LinkedIn</h4>
+              <p className="text-muted-foreground text-sm">Safrin Bargana</p>
+            </motion.div>
 
-              <div>
-                <Label htmlFor="message" className="text-slate-700 font-semibold mb-2">
-                  Message *
-                </Label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  placeholder="Tell me about your project..."
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  required
-                  data-testid="textarea-message"
-                  className="mt-2 resize-none"
-                />
+            <motion.div
+              className="glassmorphism p-6 rounded-xl text-center"
+              whileHover={{ scale: 1.05, y: -5 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Github className="text-primary text-xl w-6 h-6" />
               </div>
-
-              <Button
-                type="submit"
-                className="w-full bg-gradient-to-r from-primary to-accent text-primary-foreground py-4 text-lg font-semibold rounded-xl hover:opacity-90 transition-opacity"
-                disabled={isSubmitting}
-                data-testid="button-send-message"
-              >
-                <Send className="w-5 h-5 mr-2" />
-                {isSubmitting ? "Sending..." : "Send Message"}
-              </Button>
-            </form>
-          </motion.div>
-        </div>
+              <h4 className="text-lg font-semibold text-slate-800 mb-2">GitHub</h4>
+              <p className="text-muted-foreground text-sm">Safrinakbar</p>
+            </motion.div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
