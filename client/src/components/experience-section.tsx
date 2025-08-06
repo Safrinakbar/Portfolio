@@ -6,7 +6,7 @@ const experiences = [
   {
     title: "Website Developer",
     company: "Climateverse",
-    period: "Present",
+    period: "Completed",
     description: "Developed interactive Python learning platform using React and Firebase with comprehensive course modules and user progress tracking.",
     icon: Building
   },
@@ -171,11 +171,11 @@ export default function ExperienceSection() {
           <h3 className="text-2xl font-bold text-slate-800 mb-8 text-center" data-testid="certifications-title">
             Certifications
           </h3>
-          <div className="grid md:grid-cols-3 gap-6" data-testid="certifications-grid">
+          <div className="flex flex-wrap justify-center gap-6" data-testid="certifications-grid">
             {certifications.map((cert, index) => (
               <motion.div
                 key={index}
-                className="glassmorphism p-6 rounded-xl text-center hover:scale-105 transition-all duration-300"
+                className="glassmorphism p-6 rounded-xl text-center hover:scale-105 transition-all duration-300 min-w-[280px]"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isVisible ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: 0.1 * index }}

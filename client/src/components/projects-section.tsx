@@ -29,24 +29,6 @@ const projects = [
     technologies: ["JavaScript", "WebSocket", "Canvas API"],
     githubUrl: "https://github.com/Safrinakbar/Snake_game.git",
     liveUrl: ""
-  },
-  {
-    id: 4,
-    title: "SriPriya Textiles E-commerce",
-    description: "Complete e-commerce solution with payment integration, sales reporting, and product management for textile business.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300",
-    technologies: ["MERN Stack", "Payment Gateway", "Analytics"],
-    githubUrl: "https://github.com/Safrinakbar/E-commerce-website.git",
-    liveUrl: ""
-  },
-  {
-    id: 5,
-    title: "Python Learning Platform",
-    description: "Interactive learning platform for Python programming built with React and Firebase for Climateverse.",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300",
-    technologies: ["React", "Firebase", "Education"],
-    githubUrl: "https://github.com/Safrinakbar/Python_learn_platform.git",
-    liveUrl: ""
   }
 ];
 
@@ -64,7 +46,7 @@ export default function ProjectsSection() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6" data-testid="projects-title">
-            Featured Projects
+            Projects
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-8" />
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

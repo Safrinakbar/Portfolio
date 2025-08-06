@@ -15,14 +15,16 @@ const techLogos = [
   { name: "TailwindCSS", color: "#06B6D4", icon: "🌊" },
   { name: "Express.js", color: "#000000", icon: "🚀" },
   { name: "SQL", color: "#4479A1", icon: "🗃️" },
-  { name: "C++", color: "#00599C", icon: "⚙️" }
+  { name: "C++", color: "#00599C", icon: "⚙️" },
+  { name: "C", color: "#A8B9CC", icon: "🔧" }
 ];
 
 const programmingSkills = [
   { name: "JavaScript", level: 90 },
   { name: "Python", level: 85 },
   { name: "Java", level: 80 },
-  { name: "C++", level: 75 }
+  { name: "C++", level: 75 },
+  { name: "C", level: 70 }
 ];
 
 const webTechSkills = [
@@ -57,7 +59,7 @@ export default function SkillsSection() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-8" />
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Proficient in modern web technologies and programming languages
+            Modern web technologies and programming languages
           </p>
         </motion.div>
 

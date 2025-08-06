@@ -31,7 +31,30 @@ export default function LoadingScreen() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
       >
-        <span className="gradient-text">Loading Portfolio...</span>
+        <motion.div
+          className="gradient-text text-3xl md:text-4xl font-bold"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
+        >
+          <motion.span
+            initial={{ width: 0 }}
+            animate={{ width: "100%" }}
+            transition={{ 
+              duration: 2.5,
+              ease: "easeInOut",
+              delay: 1.2
+            }}
+            style={{
+              display: "inline-block",
+              overflow: "hidden",
+              whiteSpace: "nowrap",
+              borderRight: "2px solid #3B82F6"
+            }}
+          >
+            SAFRIN BARGANA
+          </motion.span>
+        </motion.div>
       </motion.div>
 
       {/* Particle Background */}

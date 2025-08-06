@@ -3,6 +3,7 @@ import { ChevronDown, Github, Linkedin, Mail, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTypingAnimation } from "@/hooks/use-typing-animation";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import profileImage from "@assets/safr_1754508454976.jpg";
 
 export default function HeroSection() {
   const typingText = useTypingAnimation([
@@ -55,9 +56,9 @@ export default function HeroSection() {
             transition={{ duration: 1, delay: 1 }}
           >
             <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300" 
+              src={profileImage} 
               alt="Safrin Bargana profile" 
-              className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto border-4 border-white shadow-xl animate-float"
+              className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto border-4 border-white shadow-xl animate-float object-cover"
               data-testid="profile-image"
             />
           </motion.div>
