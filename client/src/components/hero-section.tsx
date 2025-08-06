@@ -104,7 +104,7 @@ export default function HeroSection() {
 
           {/* Action Buttons */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-6 justify-center mb-16"
+            className="flex justify-center mb-16"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2 }}
@@ -116,15 +116,6 @@ export default function HeroSection() {
               data-testid="view-work-button"
             >
               View My Work
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="glassmorphism text-primary border-primary/20 hover:bg-primary/10 px-8 py-4 text-lg font-semibold rounded-full"
-              onClick={() => scrollToSection("#contact")}
-              data-testid="get-in-touch-button"
-            >
-              Get In Touch
             </Button>
           </motion.div>
 
