@@ -1,12 +1,11 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Bird, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function LoadingScreen() {
   const [showContent, setShowContent] = useState(false);
   const [currentPhase, setCurrentPhase] = useState(0);
   const particles = Array.from({ length: 15 }, (_, i) => i);
-  const birds = Array.from({ length: 3 }, (_, i) => i);
 
   useEffect(() => {
     const timer1 = setTimeout(() => setCurrentPhase(1), 500);
@@ -49,44 +48,7 @@ export default function LoadingScreen() {
       }}
       data-testid="loading-screen"
     >
-      {/* Multiple Birds Flying */}
-      <AnimatePresence>
-        {birds.map((birdIndex) => (
-          <motion.div
-            key={birdIndex}
-            className="absolute"
-            initial={{ 
-              x: -150, 
-              y: window.innerHeight / 2 + (birdIndex * 80 - 80),
-              opacity: 0,
-              scale: 0.8 + (birdIndex * 0.1)
-            }}
-            animate={{ 
-              x: window.innerWidth + 150,
-              y: [
-                window.innerHeight / 2 + (birdIndex * 80 - 80),
-                window.innerHeight / 2 + (birdIndex * 80 - 80) - 50,
-                window.innerHeight / 2 + (birdIndex * 80 - 80) + 30,
-                window.innerHeight / 2 + (birdIndex * 80 - 80)
-              ],
-              opacity: [0, 1, 1, 1, 0],
-              rotate: [0, -5, 5, -3, 0]
-            }}
-            transition={{ 
-              duration: 5 + (birdIndex * 0.5),
-              delay: birdIndex * 0.3,
-              ease: "easeInOut",
-              times: [0, 0.2, 0.5, 0.8, 1]
-            }}
-          >
-            <Bird className="text-white drop-shadow-lg" style={{ 
-              width: `${48 + birdIndex * 8}px`, 
-              height: `${48 + birdIndex * 8}px`,
-              filter: `brightness(${1.2 - birdIndex * 0.1})`
-            }} />
-          </motion.div>
-        ))}
-      </AnimatePresence>
+
 
       {/* Floating Sparkles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
