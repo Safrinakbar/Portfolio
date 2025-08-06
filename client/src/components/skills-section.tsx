@@ -2,36 +2,57 @@ import { motion } from "framer-motion";
 import TechLogo from "@/components/ui/tech-logo";
 import SkillBar from "@/components/ui/skill-bar";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { 
+  SiReact, 
+  SiNodedotjs, 
+  SiMongodb, 
+  SiPython, 
+  SiHtml5, 
+  SiCss3, 
+  SiJavascript, 
+  SiTailwindcss, 
+  SiExpress, 
+  SiMysql, 
+  SiCplusplus, 
+  SiC,
+  SiGit,
+  SiGithub,
+  SiCanva
+} from "react-icons/si";
+import { FaJava } from "react-icons/fa";
 
 const techLogos = [
-  { name: "React", color: "#61DAFB", icon: "⚛️" },
-  { name: "Node.js", color: "#339933", icon: "🟢" },
-  { name: "MongoDB", color: "#47A248", icon: "🍃" },
-  { name: "Python", color: "#3776AB", icon: "🐍" },
-  { name: "Java", color: "#ED8B00", icon: "☕" },
-  { name: "HTML5", color: "#E34F26", icon: "📄" },
-  { name: "CSS3", color: "#1572B6", icon: "🎨" },
-  { name: "JavaScript", color: "#F7DF1E", icon: "⚡" },
-  { name: "TailwindCSS", color: "#06B6D4", icon: "🌊" },
-  { name: "Express.js", color: "#000000", icon: "🚀" },
-  { name: "SQL", color: "#4479A1", icon: "🗃️" },
-  { name: "C++", color: "#00599C", icon: "⚙️" },
-  { name: "C", color: "#A8B9CC", icon: "🔧" }
+  { name: "React", color: "#61DAFB", Icon: SiReact },
+  { name: "Node.js", color: "#339933", Icon: SiNodedotjs },
+  { name: "MongoDB", color: "#47A248", Icon: SiMongodb },
+  { name: "Python", color: "#3776AB", Icon: SiPython },
+  { name: "Java", color: "#ED8B00", Icon: FaJava },
+  { name: "HTML5", color: "#E34F26", Icon: SiHtml5 },
+  { name: "CSS3", color: "#1572B6", Icon: SiCss3 },
+  { name: "JavaScript", color: "#F7DF1E", Icon: SiJavascript },
+  { name: "TailwindCSS", color: "#06B6D4", Icon: SiTailwindcss },
+  { name: "Express.js", color: "#000000", Icon: SiExpress },
+  { name: "SQL", color: "#4479A1", Icon: SiMysql },
+  { name: "C++", color: "#00599C", Icon: SiCplusplus },
+  { name: "C", color: "#A8B9CC", Icon: SiC },
+  { name: "Git", color: "#F05032", Icon: SiGit },
+  { name: "GitHub", color: "#181717", Icon: SiGithub },
+  { name: "Canva", color: "#00C4CC", Icon: SiCanva }
 ];
 
 const programmingSkills = [
-  { name: "JavaScript", level: 90 },
-  { name: "Python", level: 85 },
-  { name: "Java", level: 80 },
-  { name: "C++", level: 75 },
-  { name: "C", level: 70 }
+  { name: "JavaScript" },
+  { name: "Python" },
+  { name: "Java" },
+  { name: "C++" },
+  { name: "C" }
 ];
 
 const webTechSkills = [
-  { name: "React.js", level: 90 },
-  { name: "Node.js", level: 85 },
-  { name: "MongoDB", level: 85 },
-  { name: "TailwindCSS", level: 88 }
+  { name: "React.js" },
+  { name: "Node.js" },
+  { name: "MongoDB" },
+  { name: "TailwindCSS" }
 ];
 
 export default function SkillsSection() {
@@ -81,7 +102,7 @@ export default function SkillsSection() {
               <TechLogo 
                 name={tech.name}
                 color={tech.color}
-                icon={tech.icon}
+                Icon={tech.Icon}
               />
             </motion.div>
           ))}
@@ -107,7 +128,6 @@ export default function SkillsSection() {
                 >
                   <SkillBar 
                     name={skill.name}
-                    level={skill.level}
                     isVisible={isVisible}
                   />
                 </motion.div>
@@ -133,7 +153,6 @@ export default function SkillsSection() {
                 >
                   <SkillBar 
                     name={skill.name}
-                    level={skill.level}
                     isVisible={isVisible}
                   />
                 </motion.div>

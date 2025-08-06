@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
+import { ComponentType } from "react";
 
 interface TechLogoProps {
   name: string;
   color: string;
-  icon: string;
+  Icon: ComponentType<any>;
 }
 
-export default function TechLogo({ name, color, icon }: TechLogoProps) {
+export default function TechLogo({ name, color, Icon }: TechLogoProps) {
   return (
     <motion.div
       className="tech-logo bg-white p-6 rounded-2xl shadow-lg text-center cursor-pointer"
@@ -24,7 +25,7 @@ export default function TechLogo({ name, color, icon }: TechLogoProps) {
         className="text-4xl mb-2"
         style={{ color }}
       >
-        {icon}
+        <Icon />
       </div>
       <p className="text-sm font-semibold text-slate-700">{name}</p>
     </motion.div>
