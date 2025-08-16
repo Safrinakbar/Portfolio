@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { GraduationCap, MapPin, Github, Linkedin, Mail, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import safrinImg from "@/assets/safrin.png";
+
 
 export default function AboutSection() {
   const { ref: aboutRef, isVisible } = useScrollReveal();
@@ -30,10 +32,10 @@ export default function AboutSection() {
             data-testid="about-image"
           >
             <img 
-              src="https://pixabay.com/get/g9ded0c1cb1c4d80d1f9fb14cef949e1c4c1b98dbd9aebfedd35bd480a8b4a1f7836bfd3b0a2da946014d69db1197491bb19740b9326d9d0d8c4dcc896068535a_1280.jpg" 
-              alt="Modern tech workspace" 
-              className="rounded-2xl shadow-2xl w-full h-auto" 
-            />
+  src={safrinImg} 
+  alt="Safrin" 
+  className="rounded-2xl shadow-2xl w-full h-auto" 
+/>
           </motion.div>
 
           <motion.div

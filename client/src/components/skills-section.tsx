@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import TechLogo from "@/components/ui/tech-logo";
-import SkillBar from "@/components/ui/skill-bar";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { 
   SiReact, 
@@ -40,20 +39,7 @@ const techLogos = [
   { name: "Canva", color: "#00C4CC", Icon: SiCanva }
 ];
 
-const programmingSkills = [
-  { name: "JavaScript" },
-  { name: "Python" },
-  { name: "Java" },
-  { name: "C++" },
-  { name: "C" }
-];
 
-const webTechSkills = [
-  { name: "React.js" },
-  { name: "Node.js" },
-  { name: "MongoDB" },
-  { name: "TailwindCSS" }
-];
 
 export default function SkillsSection() {
   const { ref: skillsRef, isVisible } = useScrollReveal();
@@ -108,59 +94,10 @@ export default function SkillsSection() {
           ))}
         </motion.div>
 
-        {/* Skills Progress Bars */}
-        <div className="grid md:grid-cols-2 gap-12">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <h3 className="text-2xl font-bold text-slate-800 mb-8" data-testid="programming-languages-title">
-              Programming Languages
-            </h3>
-            <div className="space-y-6" data-testid="programming-skills">
-              {programmingSkills.map((skill, index) => (
-                <motion.div
-                  key={skill.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.1 * index }}
-                >
-                  <SkillBar 
-                    name={skill.name}
-                    isVisible={isVisible}
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <h3 className="text-2xl font-bold text-slate-800 mb-8" data-testid="web-technologies-title">
-              Web Technologies
-            </h3>
-            <div className="space-y-6" data-testid="web-tech-skills">
-              {webTechSkills.map((skill, index) => (
-                <motion.div
-                  key={skill.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.1 * index }}
-                >
-                  <SkillBar 
-                    name={skill.name}
-                    isVisible={isVisible}
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
       </div>
     </section>
   );
 }
+     
+    

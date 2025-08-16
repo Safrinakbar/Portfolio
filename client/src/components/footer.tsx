@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Linkedin, Github, Mail, Code } from "lucide-react";
+import { Linkedin, Github, Code } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -20,7 +20,7 @@ export default function Footer() {
             viewport={{ once: true }}
             data-testid="footer-title"
           >
-            Safrin Bargana A
+            Safrin Bargana Akbarali
           </motion.h3>
           
           <motion.p
@@ -77,16 +77,6 @@ export default function Footer() {
             >
               <Code className="w-6 h-6" />
             </motion.a>
-            
-            <motion.a
-              href="mailto:safrinbarganaa.22cse@kongu.edu"
-              className="text-slate-400 hover:text-white transition-colors"
-              whileHover={{ scale: 1.2, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              data-testid="footer-email-link"
-            >
-              <Mail className="w-6 h-6" />
-            </motion.a>
           </motion.div>
 
           <motion.div
@@ -97,7 +87,7 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <p className="text-slate-400" data-testid="footer-copyright">
-              &copy; 2024 Safrin Bargana. All rights reserved.
+              &copy; 2025 Safrin bargana. Made with 🤍
             </p>
           </motion.div>
         </div>
@@ -105,3 +95,4 @@ export default function Footer() {
     </footer>
   );
 }
+         

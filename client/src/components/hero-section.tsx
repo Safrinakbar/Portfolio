@@ -27,17 +27,13 @@ export default function HeroSection() {
       id="home" 
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
       style={{
-        background: 'linear-gradient(135deg, hsl(210, 40%, 98%) 0%, hsl(221, 83%, 95%) 100%)'
+        background: 'linear-gradient(120deg, #e0e7ff 0%, #f0fdfa 50%, #bae6fd 100%)'
       }}
       data-testid="hero-section"
     >
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0 opacity-10">
-        <img 
-          src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080" 
-          alt="Developer workspace background" 
-          className="w-full h-full object-cover" 
-        />
+      {/* Animated Gradient Overlay */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-200/40 via-fuchsia-100/30 to-cyan-100/40 mix-blend-multiply animate-pulse-slow" />
       </div>
 
       <div className="container mx-auto px-6 text-center z-10 relative">
@@ -50,7 +46,7 @@ export default function HeroSection() {
         >
           {/* Profile Image */}
           <motion.div
-            className="mb-8"
+            className="mb-8 mt-16"
             initial={{ scale: 0, rotate: -180 }}
             animate={{ scale: 1, rotate: 0 }}
             transition={{ duration: 1, delay: 1 }}
@@ -71,7 +67,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 1.2 }}
             data-testid="main-title"
           >
-            <span className="gradient-text">SAFRIN BARGANA A</span>
+            <span className="gradient-text">SAFRIN BARGANA</span>
           </motion.h1>
 
           {/* Typing Animation */}
